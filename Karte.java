@@ -1,33 +1,25 @@
 
-public class Karte
-
+public class Karte 
 {
-	public String nr;
-	public String farbe;
+	public String wert;
 	
-	Karte(){}
+	Karte(){};
 	
-	Karte(String nr, String farbe)
+	Karte(String wert)
 	{
-		nr = this.nr;
-		farbe = this.nr;
+		this.wert  = wert ;
 	}
 
-	public String getNr() {
-		return nr;
+	//Getters und Setters
+	
+	public String getWert() {
+		return wert;
 	}
 
-	public void setNr(String nr) {
-		this.nr = nr;
+	public void setWert(String wert) {
+		this.wert = wert;
 	}
-
-	public String getFarbe() {
-		return farbe;
-	}
-
-	public void setFarbe(String farbe) {
-		this.farbe = farbe;
-	}
+	
 	
 	
 	
