@@ -3,41 +3,49 @@ public class Analyse {
 
 	public static void main(String[] args) 
 	{
-		Batch b = new Batch();
 		Methoden m = new Methoden();
-		Karte[] stapel1 = new Karte[52];
-		Karte[] stapel2 = new Karte[52];
-		Karte[] stapel3 = new Karte[52];
-		Karte[] stapel4 = new Karte[52];
-		Karte[] stapel5 = new Karte[52];
-		Karte[] karten1 = new Karte[8];
-		Karte[] karten2 = new Karte[8];
-		Karte[] karten3 = new Karte[8];
-		Karte[] karten4 = new Karte[8];
-		Karte[] karten5 = new Karte[8];
+		Batch b = new Batch();
+		Karte[] k = new Karte[312];
+		Karte[] s1 = new Karte[4];
+		Karte[] s2 = new Karte[4];
+		Karte[] s3 = new Karte[4];
+		Karte[] s4 = new Karte[4];
+		Karte[] c = new Karte[4];
 		
-		stapel1 = b.StapelErzeigen();
-		stapel2 = b.StapelErzeigen();
-		stapel3 = b.StapelErzeigen();
-		stapel4 = b.StapelErzeigen();
-		stapel5 = b.StapelErzeigen();
-		Spieler s1 = new Spieler("Spieler",karten1);
-		Spieler s2 = new Spieler("Spieler",karten2);
-		Spieler s3 = new Spieler("Spieler",karten3);
-		Spieler s4 = new Spieler("Spieler",karten4);
-		Spieler s5 = new Spieler("Spieler",karten5);
+		k = b.StapelErzeugen();
 		
-		m.KartenZiehen(stapel1, stapel2, stapel3, stapel4, stapel5, s1,s2,s3,s4,s5);
+		s1 = m.gezogenesArray(k);
+		s2 = m.gezogenesArray(k);
+		for(int i =0;i<s1.length;i++)
+		{
+		System.out.println(s1[i].wert);
+		}
+		for(int i =0;i<s2.length;i++)
+		{
+		System.out.println(s2[i].wert);
+		}
 		
-		System.out.println("Runde 1");
-		System.out.println(""+s1.position+" "+s1.karten[0].wert);
-		System.out.println(""+s2.position+" "+s2.karten[0].wert);
-		System.out.println(""+s3.position+" "+s3.karten[0].wert);
-		System.out.println(""+s4.position+" "+s4.karten[0].wert);
-	
+		s3 = m.gezogenesArray(k);
+		s4 = m.gezogenesArray(k);
+		c =  m.gezogenesArray(k);
+		
+		Spieler spieler1 = new Spieler("Spieler",s1);
+		Spieler spieler2 = new Spieler("Spieler",s2);
+		Spieler spieler3 = new Spieler("Spieler",s3);
+		Spieler spieler4 = new Spieler("Spieler",s4);
+		Spieler croupier = new Spieler("croupier",c);
+		
+		System.out.println();
+		
+		System.out.println(""+spieler1.position+" "+""+m.summe(s1));
+		System.out.println(""+spieler2.position+" "+""+m.summe(s2));
+		System.out.println(""+spieler3.position+" "+""+m.summe(s3));
+		System.out.println(""+spieler4.position+" "+""+m.summe(s4));
+		System.out.println(""+croupier.position+" "+""+m.summe(c));
 		
 		
-
+		
+		
 	}
 
 }
